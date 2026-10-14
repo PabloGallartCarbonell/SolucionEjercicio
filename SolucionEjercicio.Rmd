@@ -87,3 +87,30 @@ porque `intersect` compara los nombres tal cual: si un animal se escribe
 distinto en los dos conjuntos (por ejemplo, "Arctic fox" y "Artic fox"),
 no se considera común aunque sea el mismo.
 
+# Apartado 1.e. Animales que no están en ambos conjuntos
+
+```{r setdiff}
+soloMammals  <- setdiff(rownames(mammals), rownames(Animals2))
+soloAnimals2 <- setdiff(rownames(Animals2), rownames(mammals))
+
+soloMammals
+length(soloMammals)
+
+soloAnimals2
+length(soloAnimals2)
+
+# Total de animales que no aparecen en ambos
+length(soloMammals) + length(soloAnimals2)
+```
+Hay 11 animales que no aparecen en ambos conjuntos: 4 solo en `mammals`
+(Arctic fox, Arctic ground squirrel, Patas monkey y Mole rat) y 7 solo en
+`Animals2` (Dipliodocus, Potar monkey, Triceratops, Brachiosaurus, Mole,
+Artic fox y Artic ground squirrel).
+
+Son de dos tipos. Tres son dinosaurios (Dipliodocus, Triceratops y
+Brachiosaurus) y solo están en `Animals2`. Los otros ocho son mamíferos
+que parecen ser los mismos animales escritos con nombres distintos en cada
+conjunto: Arctic/Artic fox, Arctic/Artic ground squirrel, Patas/Potar monkey
+y Mole rat/Mole.
+
+
