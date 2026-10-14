@@ -9,3 +9,26 @@ date: "2026-10-14"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r paquetes, message=FALSE, warning=FALSE}
+install.packages(c("MASS", "robustbase"))
+library(MASS)
+library(robustbase)
+```
+
+# Apartado 1.a. Características de los conjuntos (ayuda)
+
+```{r ayuda}
+?MASS::mammals
+?robustbase::Animals2
+```
+
+- **mammals** (paquete MASS): pesos medios del cerebro y del cuerpo de
+  62 especies de mamíferos terrestres. Variables: `body` (peso corporal en kg)
+  y `brain` (peso del cerebro en g); el nombre común de la especie identifica
+  cada fila. 
+  
+- **Animals2** (paquete robustbase): pesos medios del cerebro y del cuerpo
+  de 65 especies de animales terrestres, es decir, las 62 especies de mammals
+  más otras tres. Variables: `body` (kg) y `brain` (g). Según la ayuda, es
+  simplemente la unión de los conjuntos `Animals` (MASS) y `mammals`.
+
