@@ -74,3 +74,16 @@ como `Dipliodocus`, `Triceratops` y `Brachiosaurus`, que son dinosaurios.
 También hay nombres escritos de forma distinta en los dos conjuntos, por
 ejemplo `Arctic fox` en `mammals` y `Artic fox` en `Animals2`.
 
+# Apartado 1.d. Animales comunes a ambos conjuntos
+
+```{r commonAnimals}
+commonAnimals <- intersect(rownames(mammals), rownames(Animals2))
+commonAnimals
+length(commonAnimals)
+```
+`commonAnimals` contiene 58 animales, los que aparecen con exactamente el
+mismo nombre en `mammals` y en `Animals2`. Son menos de los 62 de `mammals`
+porque `intersect` compara los nombres tal cual: si un animal se escribe
+distinto en los dos conjuntos (por ejemplo, "Arctic fox" y "Artic fox"),
+no se considera común aunque sea el mismo.
+
