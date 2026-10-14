@@ -113,4 +113,33 @@ que parecen ser los mismos animales escritos con nombres distintos en cada
 conjunto: Arctic/Artic fox, Arctic/Artic ground squirrel, Patas/Potar monkey
 y Mole rat/Mole.
 
+# Apartado 1.f. Diferencias entre los animales que no aparecen en ambos
 
+```{r diferencias}
+# Datos de los animales que solo están en cada conjunto
+mammals[soloMammals, ]
+Animals2[soloAnimals2, ]
+
+# Resumen para compararlos
+summary(mammals[soloMammals, ])
+summary(Animals2[soloAnimals2, ])
+```
+Los animales que no aparecen en ambos conjuntos son de dos clases.
+
+1. Cuatro parejas de nombres distintos que corresponden al mismo animal:
+   Arctic fox / Artic fox, Arctic ground squirrel / Artic ground squirrel,
+   Patas monkey / Potar monkey y Mole rat / Mole. Tienen los mismos valores
+   de `body` y `brain` en ambos conjuntos, así que la diferencia es solo de
+   escritura (por eso `setdiff` los trata como animales distintos).
+
+2. Tres animales que solo están en `Animals2`: Dipliodocus (11700 kg),
+   Triceratops (9400 kg) y Brachiosaurus (87000 kg). Son dinosaurios, no
+   mamíferos, y tienen un peso corporal enorme con un cerebro muy pequeño
+   en proporción (50, 70 y 154,5 g).
+
+El resumen lo refleja: en los animales que solo están en `Animals2` la media
+de `body` es de unos 15445 kg, frente a unos 3,6 kg en los que solo están en
+`mammals`, porque los dinosaurios disparan la media.
+
+Por tanto, `Animals2` tiene 65 animales: los 62 de `mammals` (con 4 nombres
+escritos de otra forma) más 3 dinosaurios
