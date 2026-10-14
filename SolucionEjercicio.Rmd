@@ -58,5 +58,19 @@ incluye animales que no son mamíferos, como `Dipliodocus` (un dinosaurio, con
 11700 kg de peso corporal y solo 50 g de cerebro). Las filas no están ordenadas
 por tamaño. El conjunto tiene 3 filas más que `mammals` (65 frente a 62).
 
+# Apartado 1.c. Nombres de filas y columnas
 
+```{r nombres}
+rownames(mammals)
+colnames(mammals)
+
+rownames(Animals2)
+colnames(Animals2)
+```
+Los dos conjuntos tienen las mismas columnas, `body` y `brain`. Los nombres
+de las especies están en los nombres de fila: 62 en `mammals` y 65 en
+`Animals2`. En `Animals2` aparecen nombres que no están en `mammals`,
+como `Dipliodocus`, `Triceratops` y `Brachiosaurus`, que son dinosaurios.
+También hay nombres escritos de forma distinta en los dos conjuntos, por
+ejemplo `Arctic fox` en `mammals` y `Artic fox` en `Animals2`.
 
