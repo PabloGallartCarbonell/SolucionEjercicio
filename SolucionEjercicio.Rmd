@@ -32,3 +32,31 @@ library(robustbase)
   más otras tres. Variables: `body` (kg) y `brain` (g). Según la ayuda, es
   simplemente la unión de los conjuntos `Animals` (MASS) y `mammals`.
 
+# Apartado 1.b. Primera visión de los datos
+
+```{r vision-mammals}
+data(mammals)
+dim(mammals)
+head(mammals)
+tail(mammals)
+str(mammals)
+```
+`mammals` tiene 62 filas y 2 variables numéricas (`body` y `brain`).
+Los nombres de las especies son los nombres de fila (por ejemplo,
+"Arctic fox" o "Owl monkey"). Los datos no están ordenados por tamaño:
+`head` y `tail` muestran animales de tamaños muy distintos.  
+```{r vision-animals2}
+data(Animals2)
+dim(Animals2)
+head(Animals2)
+tail(Animals2)
+str(Animals2)
+```
+`Animals2` tiene 65 filas y 2 variables numéricas (`body` y `brain`), y los
+nombres de las especies son los nombres de fila. A diferencia de `mammals`,
+incluye animales que no son mamíferos, como `Dipliodocus` (un dinosaurio, con
+11700 kg de peso corporal y solo 50 g de cerebro). Las filas no están ordenadas
+por tamaño. El conjunto tiene 3 filas más que `mammals` (65 frente a 62).
+
+
+
